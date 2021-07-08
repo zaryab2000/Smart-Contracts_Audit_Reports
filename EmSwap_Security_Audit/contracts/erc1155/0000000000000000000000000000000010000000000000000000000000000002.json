@@ -1,0 +1,10 @@
+{
+	"name": "Legendary warrior",
+	"description": "Collectible card",
+	"image": "https:\/\/image.freepik.com\/free-vector\/warrior-logo-gaming_43623-412.jpg",
+	"properties": {
+		"power": 86,
+                "color": "light",
+                "hitpoints": 210
+	}
+}

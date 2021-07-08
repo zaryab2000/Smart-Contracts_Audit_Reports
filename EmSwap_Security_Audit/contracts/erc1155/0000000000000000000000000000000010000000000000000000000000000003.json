@@ -1,0 +1,10 @@
+{
+	"name": "Legendary archer",
+	"description": "Collectible card",
+	"image": "https:\/\/image.freepik.com\/free-vector\/warrior-logo-gaming_43623-412.jpg",
+	"properties": {
+		"power": 34,
+                "color": "dark",
+                "hitpoints": 180
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "Legendary mage",
+	"description": "Collectible card",
+	"image": "https:\/\/static.wikia.nocookie.net\/witcher\/images\/6\/68\/Gwent_cardart_northern_cintrian_spellweaver.jpg",
+	"properties": {
+		"power": 44,
+                "color": "light",
+                "hitpoints": 120
+	}
+}
