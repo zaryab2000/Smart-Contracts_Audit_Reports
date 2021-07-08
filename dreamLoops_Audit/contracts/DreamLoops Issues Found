@@ -1,0 +1,22 @@
+DreamLoops Issues Found
+------------------
+
+Reviewed Upto Line - 230
+Manual Review 
+-------------
+Majors
+
+2. Line 57 - Redundant Initialization to FALSE | Pause is Already FALSE
+
+
+
+
+
+
+
+
+
+tro.withdrawAll() (flatDreams.sol#1931-1933) sends eth to arbitrary user
+	Dangerous calls:
+	- require(bool)(address(msg.sender).send(address(this).balance)) (flatDreams.sol#1932)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
