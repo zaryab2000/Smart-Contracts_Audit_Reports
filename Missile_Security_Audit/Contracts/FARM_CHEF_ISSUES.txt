@@ -1,0 +1,9 @@
+# FarmChef Review 
+1. add Function issue
+
+## Automated Testing
+
+
+
+3. Something related to Modifiers
+Modifier FarmChef.ifAdmin() (FarmChef.sol#1025-1031) does not always execute _; or revertReference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-modifier
