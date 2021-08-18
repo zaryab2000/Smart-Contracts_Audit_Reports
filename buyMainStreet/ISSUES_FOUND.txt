@@ -1,0 +1,33 @@
+Manual Code Review
+
+Functions Reviewed Till Date:
+1. constructor and state variables checked.
+2. Function from 510 to 575 Line no. checked
+3. Function from 578 to 611 Line no. checked
+4. includeAccount checked
+5. _approve, _transfer Checked
+6. getRate()
+7. removeAllFee(), restoreAllFee, _getTaxFee() checked
+8. sendToMarketing, _standardTransferContent checked
+9. _transferStandard, _transferToExcluded, _transferFromExcluded checked
+
+
+
+HIGH 
+
+
+MEDIUM
+
+
+LOW
+
+
+
+
+
+
+
+
+
+
+
