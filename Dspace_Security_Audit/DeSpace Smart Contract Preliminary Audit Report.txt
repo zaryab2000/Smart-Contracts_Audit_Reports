@@ -1,0 +1,273 @@
+﻿DeSpace Smart Contract Preliminary Audit Report
+
+
+Project Synopsis
+Project Name
+	DeSpace
+	Platform
+	Ethereum, Solidity
+	Github Repo
+	Not Provided
+	Deployed Contract
+	Not Deployed
+	Total Duration
+	10 Days
+	Timeline of Audit
+	25th August 2021  to 5th September 2021
+	
+
+Contract Details
+Total Contract(s)
+	7
+	Name of Contract Folder
+	Des-Token-Main
+	Language
+	Solidity
+	Commit Hash
+	Null
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contract Vulnerabilities Synopsis
+Issues
+	Open Issues
+	Closed Issues
+	Critical Severity
+	0
+	0
+	Medium Severity
+	0
+	0
+	Low Severity
+	5
+	0
+	Information
+	3
+	0
+	Total Found
+	8
+	0
+	
+
+
+
+
+
+Detailed Results 
+The contract has gone through several stages of the audit procedure that includes structural analysis,  automated testing, manual code review etc.
+
+
+All the issues have been explained and discussed in detail below. Along with the explanation of the issue found during the audit, the recommended way to overcome the issue or improve the code quality has also been mentioned.
+
+
+
+
+
+
+________________
+
+
+1.  Contract Name: TokenB.sol
+Contract Folder: DES-Token-Main
+
+High Severity Issues
+None Found 
+Medium Severity Issues
+None Found 
+
+
+Low Severity Issues
+A.1 Inadequate Error Handling found in transfer Functions
+Line no - 61-66, 68-74
+Explanation:
+The transfer functions in the contract do not include proper require statements to ensure that the token to be transferred is smaller than or equal to the balance of the sender.
+As per the current design of the function, if the sender’s balance is lower than the amount to be transferred the transaction simply reverts because of subtraction overflow without providing an appropriate error message.
+  
+While this affects the code-readability, it also fails to provide an adequate reason behind a function revert, to the user.
+Recommendation:
+Require statements can be added accordingly to enhance code readability.
+
+
+
+
+
+
+
+
+
+
+
+A.2 Absence of Zero Address Validation 
+Line no- 55, 61, 68, 82 
+Description:
+The Token Contract includes quite a few functions that update some of the imperative addresses in the contract.
+However, during the automated testing of the contact it was found that no Zero Address Validation is implemented on the following functions while updating the state variables of the contract:
+   * approve()
+   * transfer()
+   * transferFrom()
+   * setIssuerRights()
+Recommendation:
+A require statement should be included in such functions to ensure no zero address is passed in the arguments.
+A.3 External Visibility should be preferred
+Explanation:
+Functions that are never called throughout the contract should be marked as external visibility instead of public visibility. 
+This will effectively result in Gas Optimization as well.
+
+
+Therefore, the following function must be marked as external within the contract:
+   * getOwner()
+   * mint()
+   * burn()
+   * burnFrom()
+   * approve()
+   * transfer()
+   * transferFrom()
+   * transferOwnerShip()
+   * setIssuerRights()
+
+
+Recommendation:
+If the PUBLIC visibility of the above-mentioned functions is not intended, then the EXTERNAL Visibility keyword should be preferred. 
+
+
+
+
+
+
+
+INFORMATIONAL
+A.4 NatSpec Annotations must be included
+Description:
+The smart contracts do not include the NatSpec annotations adequately.
+
+
+Recommendation:
+Cover by NatSpec all Contract methods.
+
+
+
+
+   2.  Contract Name: BridgeAssistB.sol
+Contract Folder: DES-Token-Main
+
+Low Severity Issues
+B.1  External Visibility should be preferred
+Explanation:
+Functions that are never called throughout the contract should be marked as external visibility instead of public visibility. 
+This will effectively result in Gas Optimization as well.
+
+
+Therefore, the following function must be marked as external within the contract:
+      * collect()
+      * dispense()
+      * transferOwnership()
+
+
+Recommendation:
+If the PUBLIC visibility of the above-mentioned functions is not intended, then the EXTERNAL Visibility keyword should be preferred. 
+
+
+Informational
+B.2 Coding Style Issues in the Contract 
+Explanation:
+Code readability of a Smart Contract is largely influenced by the Coding Style issues and in some specific scenarios may lead to bugs in the future. 
+During the automated testing, it was found that the BridgeAssistB contract had quite a few code style issues.
+  
+Recommendation:
+Therefore, it is recommended to fix the issues like naming convention, indentation, and code layout issues in a smart contract.
+
+
+
+      3.  Contract Name: BridgeAssistE.sol
+Contract Folder: DES-Token-Main
+
+Low Severity Issues
+C.1  External Visibility should be preferred
+Explanation:
+Functions that are never called throughout the contract should be marked as external visibility instead of public visibility. 
+This will effectively result in Gas Optimization as well.
+
+
+Therefore, the following function must be marked as external within the contract:
+         * collect()
+         * dispense()
+         * transferOwnership()
+
+
+Recommendation:
+If the PUBLIC visibility of the above-mentioned functions is not intended, then the EXTERNAL Visibility keyword should be preferred. 
+
+
+Informational
+C.2 Coding Style Issues in the Contract 
+Explanation:
+Code readability of a Smart Contract is largely influenced by the Coding Style issues and its imperative to follow best the standard practice.
+
+
+During the automated testing, it was found that the BridgeAssistE contract had quite a few code style issues.
+  
+
+Recommendation:
+Therefore, it is recommended to fix the issues like naming convention, indentation, and code layout issues in a smart contract.
+
+
+
+
+
+
+D. Contract Name: DeSpaceToken.sol
+Contract Folder: DES-Token-Main
+
+No issues found 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automated Test Results
+
+1. TokenB.sol
+  
+
+
+
+
+
+
+
+2. BridgeAssistB.sol
+  
+
+
+
+
+
+3. BridgeAssistE.sol
+  
+
+
+
+
+
+
+4. DeSpaceToken
