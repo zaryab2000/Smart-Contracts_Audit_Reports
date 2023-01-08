@@ -10,7 +10,7 @@ Additionally I have included below, details about my experience with security au
 I have been contributing my part as a Smart contract security auditor since 2.5 years now. I have worked as well as collaborated with security firms like Solidified, Immunebytes as well as Quillhash etc. 
 
 ---
-## Audit Procedure 
+## My Security Audit Procedure 
 To be very concise, my entire security audit procedure can be summed up in 5 specific steps, mentioned below:
 > *Although I plan to write an extensive article on my audit procedure soon, the details below should provide an adequate  gist of it.* 
 1.  **Documentation Perusal**
